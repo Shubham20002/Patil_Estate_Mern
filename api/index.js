@@ -1,5 +1,6 @@
 const express=require('express');
 const mongoose=require('mongoose');
+const userrouter=require('../api/routes/user.route');
 const dotenv=require('dotenv');
 dotenv.config();
 
@@ -16,4 +17,6 @@ console.log('error');
 
 app.listen(4000,(err)=>{
     console.log('server runing on port:4000');
-})
+});
+
+app.use('/api/user',userrouter);
