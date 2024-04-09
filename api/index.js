@@ -5,7 +5,9 @@ const authrouter=require('./routes/auth.route.js');
 const dotenv=require('dotenv');
 dotenv.config();
 
+const cors=require('cors');
 const app=express();
+app.use(cors());
 //connection to mongodb database
 mongoose.connect(process.env.MONGO).then(()=>
 {
